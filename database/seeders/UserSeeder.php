@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use DB;
 
 class UserSeeder extends Seeder
 {
@@ -26,11 +27,11 @@ class UserSeeder extends Seeder
                 'role' => 'Organisateur'
             ],
             [
-                'name' => 'TestAdmin',
-                'email' => 'admin@gmail.com',
+                'name' => 'Testclient',
+                'email' => 'client@gmail.com',
                 'password' => bcrypt('Root12345'),
-                'role' => 'admin'
-            ],
+                'role' => 'client'
+            ]
 
         );
     }
