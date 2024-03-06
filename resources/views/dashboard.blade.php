@@ -42,11 +42,11 @@
                         </div>
                         <div class="stats-container pt-4">
                             <p>Pourcentage de place vide a Mawazin:</p>
-                            <strong>50%</strong>
+                            <strong>761 / 5000</strong>
                         </div>
                         <div class="stats-container pt-4">
                             <p>Pourcentage de place vide a Tomorrow Land:</p>
-                            <strong>72%</strong>
+                            <strong>1203 / 20000</strong>
                         </div>
                     </div>
                 </div>
@@ -58,21 +58,21 @@
                     <table class="w-full table-auto text-sm">
                         <thead>
                             <tr class="text-sm leading-normal">
-                                <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">#</th>
-                                <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">Name</th>
-                                <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">Place</th>
+                                <th class="py-2  bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">#</th>
+                                <th class="py-2  bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">Name</th>
+                                <th class="py-2  bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">Place</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="hover:bg-grey-lighter">
-                                <td class="py-2 px-4 border-b border-grey-light"><img src="https://via.placeholder.com/40" alt="Foto Perfil" class="rounded-full h-10 w-10"></td>
-                                <td class="py-2 px-4 border-b border-grey-light">Tomorrow Land</td>
-                                <td class="py-2 px-4 border-b border-grey-light">Belguim</td>
+                                <td class="py-2  border-b border-grey-light"><img src="https://via.placeholder.com/40" alt="Foto Perfil" class="rounded-full h-10 w-10"></td>
+                                <td class="py-2  border-b border-grey-light">Tomorrow Land</td>
+                                <td class="py-2  border-b border-grey-light">Belguim</td>
                             </tr>
                             <tr class="hover:bg-grey-lighter">
-                                <td class="py-2 px-4 border-b border-grey-light"><img src="https://via.placeholder.com/40" alt="Foto Perfil" class="rounded-full h-10 w-10"></td>
-                                <td class="py-2 px-4 border-b border-grey-light">Mawazin</td>
-                                <td class="py-2 px-4 border-b border-grey-light">Morocco</td>
+                                <td class="py-2  border-b border-grey-light"><img src="https://via.placeholder.com/40" alt="Foto Perfil" class="rounded-full h-10 w-10"></td>
+                                <td class="py-2  border-b border-grey-light">Mawazin</td>
+                                <td class="py-2  border-b border-grey-light">Morocco</td>
                             </tr>
                         </tbody>
                     </table>
