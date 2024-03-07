@@ -13,8 +13,8 @@
 	<body class="">
         <nav class="fixed inset-x-0 top-0 z-10 w-full px-4 py-1 bg-zinc-500 shadow-md border-slate-500 transition duration-700 ease-out">
             <div class="flex justify-between p-4">
-                <div class="text-black">
-                    Newdge
+                <div class="text-white">
+                    Evento
                 </div>
                 <div class="flex items-center m-4 text-lg font-semibold">
                     <a href="{{ route('login') }}" class="px-6 py-2 text-black transition duration-700 ease-out bg-white border border-black rounded-lg hover:bg-black hover:border hover:text-white">Login</a>
@@ -34,11 +34,45 @@
 			</div>
 		</div>
 			
-		<div class="container px-4 md:px-0 max-w-6xl mx-auto -mt-32">
+		<div class="bg-amber-400 container px-4 md:px-0 max-w-6xl mx-auto -mt-32">
 				<div class="mx-0 sm:mx-6">
-					<div class="bg-gray-200 w-full text-xl md:text-2xl text-gray-800 leading-normal rounded-t">
-						<div class="flex flex-wrap justify-between pt-12 -mx-6">
+					<div class="w-full text-xl md:text-2xl text-gray-800 leading-normal rounded-t">
+						<div class=" flex flex-wrap justify-between pt-12 -mx-6">
 
+							<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+								<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+									<a href="#" class="flex flex-wrap no-underline hover:no-underline">
+										<img src="https://source.unsplash.com/collection/225/800x600" class="h-64 w-full rounded-t pb-6">
+										<p class="w-full text-gray-600 text-xs md:text-sm px-6">Lieu</p>
+										<div class="w-full font-bold text-xl text-gray-900 px-6">Nom d'event</div>
+										<p class="text-gray-800 font-serif text-base px-6 mb-5">
+											Description d'evenements
+										</p>
+									</a>
+								</div>
+								<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+									<div class="flex items-center justify-between">
+										<button type="button" class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">Reserver</button>
+									</div>
+								</div>
+							</div>
+							<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+								<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+									<a href="#" class="flex flex-wrap no-underline hover:no-underline">
+										<img src="https://source.unsplash.com/collection/225/800x600" class="h-64 w-full rounded-t pb-6">
+										<p class="w-full text-gray-600 text-xs md:text-sm px-6">Lieu</p>
+										<div class="w-full font-bold text-xl text-gray-900 px-6">Nom d'event</div>
+										<p class="text-gray-800 font-serif text-base px-6 mb-5">
+											Description d'evenements
+										</p>
+									</a>
+								</div>
+								<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+									<div class="flex items-center justify-between">
+										<button type="button" class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">Reserver</button>
+									</div>
+								</div>
+							</div>
 							<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
 								<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
 									<a href="#" class="flex flex-wrap no-underline hover:no-underline">
