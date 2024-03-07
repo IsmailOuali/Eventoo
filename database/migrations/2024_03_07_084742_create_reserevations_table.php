@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('reserevations', function (Blueprint $table) {
             $table->id();
+            $table->boolean('isConfirmed');
+            $table->foreignId('client_id')->constrained('clients');
             $table->timestamps();
         });
     }
