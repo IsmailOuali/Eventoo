@@ -28,4 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::view('/dashboard/events', 'dashobaord\events')->name('dashboard.events');
+Route::view('/dashboard/invitation', 'dashobaord\invitation')->name('dashboard.invitation');
+
 require __DIR__.'/auth.php';

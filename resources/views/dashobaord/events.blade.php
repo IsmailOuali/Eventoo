@@ -20,126 +20,80 @@
     
             </div>
     
-            <div class="flex-1 p-4 w-full">
-    
-                <div class="mt-4 flex flex-wrap space-x-0 space-y-2 md:space-x-4 md:space-y-0">
-
-                    <div class="flex-1 bg-white p-4 shadow rounded-lg w-full">
-                        <h2 class="text-gray-500 text-lg font-semibold pb-1">Stats</h2>
-                        <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div> 
-                        <div class="stats-container pt-4">
-                            <p>Nombre des evenemnts:</p>
-                            <strong>4</strong>
-                        </div>
-                        <div class="stats-container pt-4">
-                            <p>Pourcentage de place vide a Mawazin:</p>
-                            <strong>761 / 5000</strong>
-                        </div>
-                        <div class="stats-container pt-4">
-                            <p>Pourcentage de place vide a Tomorrow Land:</p>
-                            <strong>1203 / 20000</strong>
-                        </div>
-                    </div>
+            
+                <div class="w-1/2 mt-8  p-4 shadow rounded-lg">
+                    <div
+                    class="mx-auto block max-w-md rounded-lg bg-gray-500 bgp-6 shadow-4 dark:bg-surface-dark">
+                    <form>
+                      <!--Name input-->
+                      <div class="relative mb-6" data-twe-input-wrapper-init>
+                        <input
+                          type="text"
+                          class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
+                          id="exampleInput7"
+                          placeholder="Name" />
+                        <label
+                          for="exampleInput7"
+                          class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[twe-input-state-active]:-translate-y-[0.9rem] peer-data-[twe-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-300 dark:peer-focus:text-primary"
+                          >Name
+                        </label>
+                      </div>
+                  
+                      <!--Email input-->
+                      <div class="relative mb-6" data-twe-input-wrapper-init>
+                        <input
+                          type="email"
+                          class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
+                          id="exampleInput8"
+                          placeholder="Email address" />
+                        <label
+                          for="exampleInput8"
+                          class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[twe-input-state-active]:-translate-y-[0.9rem] peer-data-[twe-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-300 dark:peer-focus:text-primary"
+                          >Email address
+                        </label>
+                      </div>
+                  
+                      <!--Message textarea-->
+                      <div class="relative mb-6" data-twe-input-wrapper-init>
+                        <textarea
+                          class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
+                          id="exampleFormControlTextarea13"
+                          rows="3"
+                          placeholder="Message"></textarea>
+                        <label
+                          for="exampleFormControlTextarea13"
+                          class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[twe-input-state-active]:-translate-y-[0.9rem] peer-data-[twe-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-300 dark:peer-focus:text-primary"
+                          >Message
+                        </label>
+                      </div>
+                  
+                      <!--Checkbox-->
+                      <div
+                        class="mb-6 flex min-h-[1.5rem] items-center justify-center ps-[1.5rem]">
+                        <input
+                          class="relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem] border-solid border-secondary-500 outline-none before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-checkbox before:shadow-transparent before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:-mt-px checked:after:ms-[0.25rem] checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-l-0 checked:after:border-t-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-black/60 focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-black/60 focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-checkbox checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:-mt-px checked:focus:after:ms-[0.25rem] checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-l-0 checked:focus:after:border-t-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent rtl:float-right dark:border-neutral-400 dark:checked:border-primary dark:checked:bg-primary"
+                          type="checkbox"
+                          value=""
+                          id="exampleCheck10" />
+                        <label
+                          class="inline-block ps-[0.15rem] pt-[0.15rem] hover:cursor-pointer"
+                          for="exampleCheck10">
+                          Send me a copy of this message
+                        </label>
+                      </div>
+                  
+                      <!--Submit button-->
+                      <button
+                        type="submit"
+                        class="inline-block w-full rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+                        data-twe-ripple-init
+                        data-twe-ripple-color="light">
+                        Send
+                      </button>
+                    </form>
+                  </div>
                 </div>
-    
-                <div class="mt-8 bg-white p-4 shadow rounded-lg">
-                    <h2 class="text-gray-500 text-lg font-semibold pb-4">Vos evenements</h2>
-                    <div class="my-1"></div> 
-                    <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div> 
-                    <table class="w-full table-auto text-sm">
-                        <thead>
-                            <tr class="text-sm leading-normal">
-                                <th class="py-2  bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">#</th>
-                                <th class="py-2  bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">Name</th>
-                                <th class="py-2  bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">Place</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="hover:bg-grey-lighter">
-                                <td class="py-2  border-b border-grey-light"><img src="https://via.placeholder.com/40" alt="Foto Perfil" class="rounded-full h-10 w-10"></td>
-                                <td class="py-2  border-b border-grey-light">Tomorrow Land</td>
-                                <td class="py-2  border-b border-grey-light">Belguim</td>
-                            </tr>
-                            <tr class="hover:bg-grey-lighter">
-                                <td class="py-2  border-b border-grey-light"><img src="https://via.placeholder.com/40" alt="Foto Perfil" class="rounded-full h-10 w-10"></td>
-                                <td class="py-2  border-b border-grey-light">Mawazin</td>
-                                <td class="py-2  border-b border-grey-light">Morocco</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="text-right mt-4">
-                        <button class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded">
-                            Voir Plus
-                        </button>
-                    </div>
-                </div>
- 
-                <div class="mt-8 bg-white p-4 shadow rounded-lg">
-                    <div class="bg-white p-4 rounded-md mt-4">
-                        <h2 class="text-gray-500 text-lg font-semibold pb-4">Demande d'acceptation</h2>
-                        <div class="my-1"></div> 
-                        <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
-                        <table class="w-full table-auto text-sm">
-                            <thead>
-                                <tr class="text-sm leading-normal">
-                                    <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">Nom</th>
-                                    <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">Date</th>
-                                    <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light text-right">Event</th>
-                                    <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light text-right">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="hover:bg-grey-lighter">
-                                    <td class="py-2 px-4 border-b border-grey-light">Carlos Sánchez</td>
-                                    <td class="py-2 px-4 border-b border-grey-light">27/07/2023 12:00:23</td>
-                                    <td class="py-2 px-4 border-b border-grey-light text-right">Mawazin</td>
-                                    <td class="py-2 px-4 border-b border-grey-light text-right">
-                                        <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Approuver</button>
-                                        <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Refuser</button>
 
-                                    </td>
-                                </tr>
-                            <tr class="hover:bg-grey-lighter">
-                                <td class="py-2 px-4 border-b border-grey-light">Pedro Hernández</td>
-                                <td class="py-2 px-4 border-b border-grey-light">02/08/2023 </td>
-                                <td class="py-2 px-4 border-b border-grey-light text-right">Tomorrow Land</td>
-                                <td class="py-2 px-4 border-b border-grey-light text-right">
-                                    <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Approuver</button>
-                                    <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Refuser</button>
-
-                                </td>
-                            </tr>
-                            <tr class="hover:bg-grey-lighter">
-                                <td class="py-2 px-4 border-b border-grey-light">Sara Ramírez</td>
-                                <td class="py-2 px-4 border-b border-grey-light">03/08/2023</td>
-                                <td class="py-2 px-4 border-b border-grey-light text-right">Tomorrow Land</td>
-                                <td class="py-2 px-4 border-b border-grey-light text-right">
-                                    <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Approuver</button>
-                                    <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Refuser</button>
-
-                                </td>
-                            </tr>
-                            <tr class="hover:bg-grey-lighter">
-                                <td class="py-2 px-4 border-b border-grey-light">Daniel Torres</td>
-                                <td class="py-2 px-4 border-b border-grey-light">04/08/2023</td>
-                                <td class="py-2 px-4 border-b border-grey-light text-right">Mawazin</td>
-                                <td class="py-2 px-4 border-b border-grey-light text-right">
-                                    <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Approuver</button>
-                                    <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Refuser</button>
-
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <div class="text-right mt-4">
-                            <div class="text-right mt-4">
-                                <button class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded">
-                                    Voir Plus
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
