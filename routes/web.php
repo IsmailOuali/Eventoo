@@ -34,5 +34,6 @@ Route::view('/dashboard/invitation', 'dashobaord\invitation')->name('dashboard.i
 Route::view('/dashboardAdmin/categories', 'dashobaord\categories')->name('dashboardAdmin.categories');
 Route::view('/dashboardAdmin/users', 'dashobaord\users')->name('dashboardAdmin.users');
 Route::view('/dashboardAdmin/demandes', 'dashobaord\demandes')->name('dashboardAdmin.demandes');
+Route::view('/dashboardAdmin/events', 'dashobaord\events')->name('dashboardAdmin.events');
 
 require __DIR__.'/auth.php';
