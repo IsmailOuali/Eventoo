@@ -24,7 +24,7 @@
             
                 <div class="w-1/2 mt-8  p-4 shadow rounded-lg">
                     <div
-                    class="mx-auto block max-w-md rounded-lg bg-red-100 text-black bgp-6 shadow-4 dark:bg-surface-dark">
+                    class="mx-auto block max-w-md rounded-lg bg-gray-400 text-black bgp-6 shadow-4 dark:bg-surface-dark">
                     <form>
                       <div class="relative mb-6" data-twe-input-wrapper-init>
                         <input
