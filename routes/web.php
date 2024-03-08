@@ -31,4 +31,8 @@ Route::middleware('auth')->group(function () {
 Route::view('/dashboard/events', 'dashobaord\events')->name('dashboard.events');
 Route::view('/dashboard/invitation', 'dashobaord\invitation')->name('dashboard.invitation');
 
+Route::view('/dashboardAdmin/categories', 'dashobaord\categories')->name('dashboardAdmin.categories');
+Route::view('/dashboardAdmin/users', 'dashobaord\users')->name('dashboardAdmin.users');
+Route::view('/dashboardAdmin/demandes', 'dashobaord\demandes')->name('dashboardAdmin.demandes');
+
 require __DIR__.'/auth.php';
