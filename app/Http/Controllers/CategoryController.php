@@ -21,7 +21,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -29,7 +29,14 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        //
+       
+        $validatedData = $request->validate([
+            'name' => 'required',
+        ]);
+        
+        Category::create($validatedData);
+         
+        return redirect()->route('dashboardAdmin.categories')->with('success','Category created successfully.');
     }
 
     /**

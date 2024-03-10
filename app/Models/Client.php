@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Client extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'id_user',
+    ];
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
+
 }

@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('lieu');
             $table->string('image');
             $table->foreignId('organisateur_id')->constrained('organisateurs');
+            $table->foreignId('category_id')->constrained('categories');
+
             $table->timestamps();
         });
     }

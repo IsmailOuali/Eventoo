@@ -23,8 +23,8 @@
                             type="role"
                             name="role"
                             required autocomplete="new-role" />
-                            <option value="Organisateur">Organisateur</option>
-                            <option value="Client">Client</option>
+                            <option value="organisateur">Organisateur</option>
+                            <option value="client">Client</option>
             </select>
                             
             <x-input-error :messages="$errors->get('password')" class="mt-2" />

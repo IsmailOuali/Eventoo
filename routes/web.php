@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,5 +36,7 @@ Route::view('/dashboardAdmin/categories', 'dashboardAdmin\categories')->name('da
 Route::view('/dashboardAdmin/users', 'dashboardAdmin\users')->name('dashboardAdmin.users');
 Route::view('/dashboardAdmin/demandes', 'dashboardAdmin\demandes')->name('dashboardAdmin.demandes');
 Route::view('/dashboardAdmin/events', 'dashboardAdmin\events')->name('dashboardAdmin.events');
+
+Route::resource('add_cat',CategoryController::class);
 
 require __DIR__.'/auth.php';
