@@ -2,65 +2,84 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Event;
-use App\Http\Requests\StoreEventRequest;
-use App\Http\Requests\UpdateEventRequest;
+use App\Models\Reservation;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class EventController extends Controller
+
+class eventController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $totalCategoryCount = Category::count();
+        $userId = Auth::id();
+        $eventCount = Event::where('organizer_id', $userId)->count();
+        
+        $events = Event::where('organizer_id', $userId)->withCount('reservation')->get();
+    
+        $reservationCount = 0;
+        foreach ($events as $event) {
+            $reservationCount += $event->reservations_count;
+        }
+    
+        return view('organizer.home', [
+            'events' => $events,
+            'totalCategoryCount' => $totalCategoryCount,
+            'eventCount' => $eventCount,
+            'reservationCount' => $reservationCount
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $organizerId = Auth::user()->id;
+        $categories = Category::pluck('name', 'id'); 
+        return view('organizer.createEvent', compact('organizerId', 'categories'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreEventRequest $request)
-    {
-        //
+    public function store(Request $request){
+        // dd($request);
+        $data = $request->validate([
+            'title' =>'required',
+            'description' =>'required',
+            'date' =>'required',
+            'location' =>'required',
+            'category_id' =>'required',
+            'available_seats' =>'required',
+            'organizer_id' =>'required',
+        ]);
+
+        $newEvent = Event::create($data);
+        return redirect()->route('organizer.home');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Event $event)
-    {
-        //
+    public function edit(Event $event){
+        // dd($event);
+        $categories = Category::pluck('name', 'id');
+        $organizerId = Auth::user()->id; 
+        return view('organizer.editEvent', ['event'=>$event], compact('organizerId', 'categories'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Event $event)
-    {
-        //
+    public function update(Event $event, Request $request){
+    //    dd($request);
+        $data = $request->validate([
+            'title' =>'required',
+            'description' =>'required',
+            'date' =>'required',
+            'location' =>'required',
+            'category_id' =>'required',
+            'available_seats' =>'required',
+            'organizer_id' =>'required',
+        ]);
+
+        $event->update($data);
+        return redirect(route('organizer.home'))->with('success','Event Updated Successfully');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateEventRequest $request, Event $event)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Event $event)
-    {
-        //
+    public function destroy(Event $event){
+        $event->delete();
+        return redirect(route('organizer.home'))->with('success','Event Deleted Successfully');
     }
 }

@@ -1,1 +1,0 @@
-<h1>Demandes des events Blade</h1>

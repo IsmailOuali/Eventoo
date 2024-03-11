@@ -1,1 +1,0 @@
-<h1>Users Restriction Blade</h1>

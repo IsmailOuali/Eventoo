@@ -10,6 +10,7 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
+    
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
@@ -17,7 +18,9 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('role', ['client', 'organisateur', 'admin'])->default('client');
+            $table->enum('role', ['admin', 'organizer', 'client'])->default('client');  
+            $table->enum('status', ['active', 'inactive'])->default('inactive');
+            $table->tinyInteger('restricted')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
