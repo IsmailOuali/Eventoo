@@ -22,6 +22,14 @@ class clientController extends Controller
         return view('client.single', ['event' => $event]);
     }
 
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $events = Event::where('name', 'like', "%$search%")->get();
+
+        return view('client.home', ['events' => $events]);
+    }
+
     public function createReservation(Request $request){
 
         $eventId = $request->route('id');

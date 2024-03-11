@@ -21,7 +21,7 @@ use App\Http\Controllers\eventController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
 
 Route::get('/dashboard', [dashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
@@ -61,8 +61,10 @@ Route::middleware(['auth','role:organizer'])->group(function () {
 
 Route::middleware(['auth','role:client'])->group(function () {
     Route::get('client/home',[clientController::class, 'index'])->name('client.home');
+    Route::get('client/home',[clientController::class, 'index'])->name('client.home');
     Route::get('client/{id}/single',[clientController::class, 'single'])->name('client.single');
     Route::get('client/{id}/createReservation', [clientController::class, 'createReservation'])->name('client.createReservation');
     Route::post('client/storeReservation', [clientController::class,'storeReservation'])->name('client.storeReservation');
 });
+
 

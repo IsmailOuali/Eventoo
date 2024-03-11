@@ -27,8 +27,8 @@
         }
     </style>
 </head>  
-<body class="overflow-x-hidden antialiased">
-    <header class="relative z-50 w-full h-24">
+<body class="overflow-x-hidden bg-blue-200 antialiased">
+    <header class="relative z-50 w-full h-24 ">
         <div
             class="container bg-gray-200 flex items-center justify-center h-full max-w-6xl px-8 mx-auto sm:justify-between xl:px-0">
 
@@ -47,8 +47,8 @@
             </nav>
 
             <div class="absolute left-0 flex-col items-center justify-center hidden w-full pb-8 mt-48 border-b border-gray-200 md:relative md:w-auto md:bg-transparent md:border-none md:mt-0 md:flex-row md:p-0 md:items-end md:flex md:justify-between">
-                <a href="{{ route('login') }}"class="relative z-40 inline-block w-auto h-full px-5 py-3 text-sm font-bold leading-none text-white transition-all transition duration-100 duration-300 bg-indigo-700 rounded shadow-md fold-bold lg:bg-white lg:text-black sm:w-full lg:shadow-none hover:shadow-xl">login</a>
-                <a href="{{ route('register') }}"  class="relative z-40 inline-block w-auto h-full px-5 py-3 text-sm font-bold leading-none text-white transition-all transition duration-100 duration-300 bg-indigo-700 rounded shadow-md fold-bold lg:bg-white lg:text-black sm:w-full lg:shadow-none hover:shadow-xl">Signup</a>
+                <a href="{{ route('login') }}" class="bg-transparent mr-8 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">login</a>
+                <a href="{{ route('register') }}" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Signup</a>
             </div>
 
             <div id="nav-mobile-btn"
@@ -69,59 +69,18 @@
             </div>
             <div class="relative z-50 flex flex-col items-end justify-center w-full h-full lg:w-1/2 ms:pl-10 mt-2">
                 <div class="container relative left-0 w-full max-w-4xl lg:absolute xl:max-w-6xl lg:w-screen mt-2">
-                    <img src="https://images.pexels.com/photos/2240771/pexels-photo-2240771.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Audience" class="object-cover w-72 h-72 max-w-full lg:max-w-4xl rounded-lg mt-12">
+                    <img src="assets/img/bg-login.jpg" alt="Audience" class="object-cover w-2/4 h-2/4 max-w-full lg:max-w-4xl rounded-lg mt-12">
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="relative px-8 py-5 bg-white border-t border-gray-200 md:py-16 lg:py-24 xl:py-40 xl:px-0">
-        
-        <div id="events" class="container flex flex-col items-center h-full max-w-6xl mx-auto">
-            <div class="relative flex">
-                <input
-                  type="search"
-                  class="relative m-0 -me-0.5 block flex-auto rounded-s border border-solid border-neutral-200 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-surface outline-none transition duration-200 ease-in-out placeholder:text-neutral-500 focus:z-[3] focus:border-primary focus:shadow-inset focus:outline-none motion-reduce:transition-none dark:border-white/10 dark:text-white dark:placeholder:text-neutral-200 dark:autofill:shadow-autofill dark:focus:border-primary"
-                  placeholder="Search"
-                  aria-label="Search"
-                  id="exampleFormControlInput3"
-                  aria-describedby="button-addon3" />
-                <button
-                  class="z-[2] inline-block rounded-e border-2 border-primary px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-primary transition duration-150 ease-in-out hover:border-primary-accent-300 hover:bg-primary-50/50 hover:text-primary-accent-300 focus:border-primary-600 focus:bg-primary-50/50 focus:text-primary-600 focus:outline-none focus:ring-0 active:border-primary-700 active:text-primary-700 dark:text-primary-500 dark:hover:bg-blue-950 dark:focus:bg-blue-950"
-                  data-twe-ripple-init
-                  data-twe-ripple-color="white"
-                  type="button"
-                  id="button-addon3">
-                  Search
-                </button>
-              </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8"> 
-                <div class="max-w-md bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="rounded-t-lg" src="https://cdn.pixabay.com/photo/2015/01/16/15/00/concert-601537_1280.jpg" alt="" />
-                    </a>
-                    <div class="p-5">
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Read more
-                            <svg class="rtl:rotate-180 mt-1 w-3 h-3 ml-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>   
-            </div>
-        </div>
-    </div>
 
     <footer class="px-4 pt-12 pb-8 text-white bg-white border-t border-gray-200">
         
              
         <div class=" text-center text-gray-500 border-t border-gray-100">
-            © 2024 Benseddiq ahmed. All rights reserved.
+            © 2024 Ouali Ismail. All rights reserved.
         </div>
 
     </footer>

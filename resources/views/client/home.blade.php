@@ -27,21 +27,14 @@
         }
     </style>
 </head>
-<body class="overflow-x-hidden antialiased">
-    <header class="relative z-50 w-full h-24">
+<body class="overflow-x-hidden bg-blue-200 antialiased">
+    <header class="relative z-50 w-full h-24 ">
         <div
-            class="container flex items-center justify-center h-full max-w-6xl px-8 mx-auto sm:justify-between xl:px-0">
+            class="container bg-gray-200 flex items-center justify-center h-full max-w-6xl px-8 mx-auto sm:justify-between xl:px-0">
 
             <a href="/" class="relative flex items-center inline-block h-5 h-full font-black leading-none">
-                <svg class="w-auto h-6 text-indigo-600 fill-current" viewBox="0 0 194 116"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <g fill-rule="evenodd">
-                        <path
-                            d="M96.869 0L30 116h104l-9.88-17.134H59.64l47.109-81.736zM0 116h19.831L77 17.135 67.088 0z" />
-                        <path d="M87 68.732l9.926 17.143 29.893-51.59L174.15 116H194L126.817 0z" />
-                    </g>
-                </svg>
-                <span class="ml-3 text-xl text-gray-800">Evento<span class="text-pink-500">.</span></span>
+ 
+                <span class="ml-3 text-xl text-gray-800">Evento</span>
             </a>
 
             <nav id="nav"
@@ -59,7 +52,7 @@
                         @csrf
                     
                     <a href="{{  route('logout') }}" onclick="event.preventDefault();
-                                            this.closest('form').submit();" class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200" >
+                                            this.closest('form').submit();" class="bg-transparent mr-8 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" >
                         Log Out
                     </a>
                 </form>                  
@@ -79,23 +72,34 @@
             <div class="z-30 flex flex-col items-center w-full max-w-xl pt-48 text-center lg:items-start lg:w-1/2 lg:pt-20 xl:pt-40 lg:text-left">
                 <h1 class="relative mb-4 text-3xl font-black leading-tight text-gray-900 sm:text-6xl xl:mb-8">Begin Your Journey Here</h1>
                 <p class="pr-0 mb-8 text-base text-gray-600 sm:text-lg xl:text-xl lg:pr-20">Events are not just occasions; they're opportunities to create unforgettable moments and lasting memories</p>
-                <a href="" class="relative self-start inline-block w-auto px-8 py-4 mx-auto mt-0 text-base font-bold text-white bg-indigo-600 border-t border-gray-200 rounded-md shadow-xl sm:mt-1 fold-bold lg:mx-0">Find Your Event !</a>
+                <a href="#events" class="relative self-start inline-block w-auto px-8 py-4 mx-auto mt-0 text-base font-bold text-white bg-indigo-600 border-t border-gray-200 rounded-md shadow-xl sm:mt-1 fold-bold lg:mx-0">Find Your Event !</a>
             </div>
             <div class="relative z-50 flex flex-col items-end justify-center w-full h-full lg:w-1/2 ms:pl-10 mt-2">
                 <div class="container relative left-0 w-full max-w-4xl lg:absolute xl:max-w-6xl lg:w-screen mt-2">
-                    <!-- Image here with adjusted dimensions -->
-                    <img src="https://images.pexels.com/photos/2240771/pexels-photo-2240771.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Audience" class="object-cover w-96 h-72 max-w-full lg:max-w-4xl rounded-lg mt-12">
+                    <img src="assets/img/bg-login.jpg" alt="Audience" class="object-cover w-2/4 h-2/4 max-w-full lg:max-w-4xl rounded-lg mt-12">
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="relative px-8 py-5 bg-white border-t border-gray-200 md:py-16 lg:py-24 xl:py-40 xl:px-0">
+    <div class="flex justify-center" >
+        
+        <div class="relative px-8  border-gray-200 ">
+            <div class="pl-32 relative mx-auto text-gray-600">
+                <form action="" method="GET">
+                    <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+                    type="search" name="search" placeholder="Search">
+                    <button>
+                        Chercher
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
         <div id="events" class="container flex flex-col items-center h-full max-w-6xl mx-auto">
-        <h3 class="w-full max-w-3xl px-5 px-8 mt-2 text-2xl font-black leading-tight text-center text-gray-900 sm:mt-0 sm:px-0 sm:text-6xl mb-10 md:px-0">Simple, Easy Reservation for Everyone</h3>
+        <h3 class="w-full max-w-3xl px-5 px-8 mt-2 text-2xl font-black leading-tight text-center text-gray-900 sm:mt-0 sm:px-0 sm:text-6xl mb-10 md:px-0">Enjouy Our Latest Events  </h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8"> 
                 @foreach ($events as $event)
-                <div class="max-w-md bg-white border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <div class="max-w-md bg-blue-400 border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="{{ route('client.single', ['id' => $event->id]) }}">
                         <img class="rounded-t-lg" src="https://cdn.pixabay.com/photo/2015/01/16/15/00/concert-601537_1280.jpg" alt="" />
                     </a>
@@ -121,7 +125,7 @@
         
              
         <div class=" text-center text-gray-500 border-t border-gray-100">
-            © 2024 Benseddiq Ahmed. All rights reserved.
+            © 2024 Ouali Ismail. All rights reserved.
         </div>
 
     </footer>
