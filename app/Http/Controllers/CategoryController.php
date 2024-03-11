@@ -13,7 +13,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::All();
+
+        return view('dashboardAdmin.categories', compact('categories'));
     }
 
     /**
@@ -68,6 +70,9 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+    
+        return redirect()->route('add_cat.index')->with('success', 'Category has been deleted successfully');
+
     }
 }

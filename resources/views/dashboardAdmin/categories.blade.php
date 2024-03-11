@@ -53,47 +53,31 @@
                         <thead
                           class="border-b border-neutral-200 font-medium dark:border-white/10">
                           <tr>
-                            <th scope="col" class="px-6 py-4">#</th>
                             <th scope="col" class="px-6 py-4">Name</th>
                             <th scope="col" class="px-6 py-4">Edit</th>
                             <th scope="col" class="px-6 py-4">Delete</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr
-                            class="border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-white/10 dark:hover:bg-neutral-600">
-                            <td class="whitespace-nowrap px-6 py-4 font-medium">1</td>
-                            <td class="whitespace-nowrap px-6 py-4">Out</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <button type="button" class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Editer</button>
-                            </td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <button type="button" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">Supprimer</button>
-                            </td>
+                          @foreach($categories as $category)
+                          <tr class="border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-white/10 dark:hover:bg-neutral-600">
+                              <td class="whitespace-nowrap px-6 py-4">{{ $category->name }}</td>
+                              <td class="whitespace-nowrap px-6 py-4">
+                                  <button type="button" class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">
+                                      Editer
+                                  </button>
+                              </td>
+                              <td class="whitespace-nowrap px-6 py-4">
+                                  <form action="{{ route('add_cat.destroy', $category->id) }}" method="post">
+                                      @csrf
+                                      @method('DELETE')
+                                      <button type="submit" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
+                                          Supprimer
+                                      </button>
+                                  </form>
+                              </td>
                           </tr>
-                          <tr
-                            class="border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-white/10 dark:hover:bg-neutral-600">
-                            <td class="whitespace-nowrap px-6 py-4 font-medium">2</td>
-                            <td class="whitespace-nowrap px-6 py-4">Sport</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <button type="button" class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Editer</button>
-                            </td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <button type="button" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">Supprimer</button>
-                            </td>
-                          </tr>
-                          <tr
-                            class="border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-white/10 dark:hover:bg-neutral-600">
-                            <td class="whitespace-nowrap px-6 py-4 font-medium">3</td>
-                            <td class="whitespace-nowrap px-6 py-4">Art</td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <button type="button" class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Editer</button>
-                            </td>
-                            <td class="whitespace-nowrap px-6 py-4">
-                                <button type="button" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">Supprimer</button>
-                            </td>
-                          </tr>
-                    
+                          @endforeach
                         </tbody>
                       </table>
                     </div>
@@ -110,6 +94,6 @@
     
         menuBtn.addEventListener('click', () => {
             sideNav.classList.toggle('hidden');
-        }
+        });
     </script>
 </x-app-layout>

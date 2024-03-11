@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,16 +28,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Use Route::resource to define all CRUD routes for categories
+    Route::resource('add_cat', CategoryController::class);
 });
+
+Route::get('/dashboardAdmin/categories', [CategoryController::class, 'index'])->name('dashboardAdmin.categories');
 
 Route::view('/dashboard/events', 'dashobaord\events')->name('dashboard.events');
 Route::view('/dashboard/invitation', 'dashobaord\invitation')->name('dashboard.invitation');
 
-Route::view('/dashboardAdmin/categories', 'dashboardAdmin\categories')->name('dashboardAdmin.categories');
 Route::view('/dashboardAdmin/users', 'dashboardAdmin\users')->name('dashboardAdmin.users');
 Route::view('/dashboardAdmin/demandes', 'dashboardAdmin\demandes')->name('dashboardAdmin.demandes');
 Route::view('/dashboardAdmin/events', 'dashboardAdmin\events')->name('dashboardAdmin.events');
-
-Route::resource('add_cat',CategoryController::class);
 
 require __DIR__.'/auth.php';
