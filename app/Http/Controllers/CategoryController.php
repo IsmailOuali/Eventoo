@@ -2,77 +2,47 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
-use App\Http\Requests\StoreCategoryRequest;
-use App\Http\Requests\UpdateCategoryRequest;
+use Illuminate\Http\Request;
+use App\Models\category;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        $categories = Category::All();
+    public function index(){
+        $categories = category::all();
+        return view('admin.categories', ['categories' => $categories]);
+    }    
 
-        return view('dashboardAdmin.categories', compact('categories'));
+    public function create(){
+        return view('admin.createCategory');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        
-    }
+    public function store(Request $request){
+        // dd($request);
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreCategoryRequest $request)
-    {
-       
-        $validatedData = $request->validate([
-            'name' => 'required',
+        $data = $request->validate([
+            'name' => 'alpha:ascii', 
         ]);
-        
-        Category::create($validatedData);
-         
-        return redirect()->route('dashboardAdmin.categories')->with('success','Category created successfully.');
+
+        $newCategory = Category::create($data);
+        return redirect(route('admin.categories'));
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Category $category)
-    {
-        //
+    public function edit(category $category){
+        // dd($category);
+        return view('admin.editCategory', ['category' => $category]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Category $category)
-    {
-        //
+    public function update(category $category, Request $request){
+        $data = $request->validate([
+            'name' => 'alpha:ascii', 
+        ]);
+
+        $category->update($data);
+        return redirect(route('admin.categories'))->with('success', 'category update successfully');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateCategoryRequest $request, Category $category)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Category $category)
-    {
+    public function destroy(category $category){
         $category->delete();
-    
-        return redirect()->route('add_cat.index')->with('success', 'Category has been deleted successfully');
-
+        return redirect(route('admin.categories'))->with('success', 'category delete successfully');
     }
 }

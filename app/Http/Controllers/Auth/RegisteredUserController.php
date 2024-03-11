@@ -4,9 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Models\Client;
-use App\Models\Admin;
-use App\Models\Organisateur;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -46,43 +43,10 @@ class RegisteredUserController extends Controller
             'role' => $request->role,
         ]);
 
-        switch ($request->role) {
+        event(new Registered($user));
 
-            case 'admin':
-               $user->assignRole('admin');
-               event(new Registered($user));
-               Auth::login($user);
-               Admin::create([
-                'id_user'->Auth::id(),
-               ]);
-                return redirect('/dashboard');
-                break;
-            case 'organisateur':
-                $user->assignRole('organisateur');
-                event(new Registered($user));
-                Auth::login($user);
-                Organisateur::create([
-                 'id_user'->Auth::id(),
-                ]);
-                return redirect('/dashboardOrg');
+        Auth::login($user);
 
-                break;
-            case 'client':
-                $user->assignRole('client');
-                event(new Registered($user));
-                Auth::login($user);
-                Client::create([
-                 'id_user'->Auth::id(),
-                ]);
-                return redirect('/welcome');
-
-            default:
-                die;
-        }
-        
-
-
-
-
+        return redirect(RouteServiceProvider::HOME);
     }
 }
