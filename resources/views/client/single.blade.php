@@ -85,19 +85,23 @@
                         <!-- Event Details -->
                         <div class="flex mb-4">
                             <div class="mr-4">
-                                <span class="font-bold text-gray-700 dark:text-gray-300">Category:</span>
+                                <span class="font-bold text-gray-700 dark:text-gray-300">Categorie:</span>
                                 <span class="text-gray-600 dark:text-gray-300">{{ $event->category->name }}</span>
                             </div>
                             <div>
-                                <span class="font-bold text-gray-700 dark:text-gray-300">Availability:</span>
+                                <span class="font-bold text-gray-700 dark:text-gray-300">Places:</span>
                                 <span class="text-gray-600 dark:text-gray-300">{{ $event->available_seats }}</span>
                             </div>
                         </div>
                         <!-- Event Description -->
                         <div>
-                            <span class="font-bold text-gray-700 dark:text-gray-300">Event Description:</span>
+                            <span class="font-bold text-gray-700 dark:text-gray-300"> Description:</span>
                             <p class="text-gray-600 dark:text-gray-300 text-sm mt-2">
                                 {{ $event->description }}
+                            </p>
+                            <span class="font-bold text-gray-700 dark:text-gray-300">Date:</span>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mt-2">
+                                {{ $event->date }}
                             </p>
                         </div>
                     </div>
