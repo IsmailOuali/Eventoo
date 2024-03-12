@@ -70,8 +70,8 @@
     <div class="relative items-center justify-center w-full overflow-x-hidden lg:pt-40 lg:pb-40 xl:pt-40 xl:pb-64 mt-2">
         <div class="container flex flex-col items-center justify-between h-full max-w-6xl px-8 mx-auto -mt-32 lg:flex-row xl:px-0">
             <div class="z-30 flex flex-col items-center w-full max-w-xl pt-48 text-center lg:items-start lg:w-1/2 lg:pt-20 xl:pt-40 lg:text-left">
-                <h1 class="relative mb-4 text-3xl font-black leading-tight text-gray-900 sm:text-6xl xl:mb-8">Begin Your Journey Here</h1>
-                <p class="pr-0 mb-8 text-base text-gray-600 sm:text-lg xl:text-xl lg:pr-20">Events are not just occasions; they're opportunities to create unforgettable moments and lasting memories</p>
+                <h1 class="relative mb-4 text-3xl font-black leading-tight text-gray-900 sm:text-6xl xl:mb-8">Where Every Moment is an Event.</h1>
+                <p class="pr-0 mb-8 text-base text-gray-600 sm:text-lg xl:text-xl lg:pr-20">Connecting People, Creating Magic</p>
                 <a href="#events" class="relative self-start inline-block w-auto px-8 py-4 mx-auto mt-0 text-base font-bold text-white bg-indigo-600 border-t border-gray-200 rounded-md shadow-xl sm:mt-1 fold-bold lg:mx-0">Find Your Event !</a>
             </div>
             <div class="relative z-50 flex flex-col items-end justify-center w-full h-full lg:w-1/2 ms:pl-10 mt-2">
@@ -84,22 +84,33 @@
     <div class="flex justify-center" >
         
         <div class="relative px-8  border-gray-200 ">
-            <div class="pl-32 relative mx-auto text-gray-600">
-                <form action="" method="GET">
+            <div class="pl-32  relative mx-auto text-gray-600">
+                <form class="flex" action="" method="GET">
+
                     <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
                     type="search" name="search" placeholder="Search">
-                    <button>
+                    <button class="ml-4 bg-transparent hover:bg-gray-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                         Chercher
+                    </button>
+                </form>
+                <form class="flex pt-8" action="" method="GET">
+                  <select name="category" class="block ml-8 w-3xl text-sm font-medium transition duration-75 border border-gray-800 rounded-lg shadow-sm h-9 focus:border-blue-600 focus:ring-1 focus:ring-inset focus:ring-blue-600 bg-none" >
+                        @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>                       
+                    <button class="ml-4 w-sm bg-transparent hover:bg-gray-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                        Filtrer
                     </button>
                 </form>
             </div>
         </div>
-    </div>
+  
         <div id="events" class="container flex flex-col items-center h-full max-w-6xl mx-auto">
-        <h3 class="w-full max-w-3xl px-5 px-8 mt-2 text-2xl font-black leading-tight text-center text-gray-900 sm:mt-0 sm:px-0 sm:text-6xl mb-10 md:px-0">Enjouy Our Latest Events  </h3>
+        <h3 class="w-full max-w-3xl px-5 px-8 mt-2 text-2xl font-black leading-tight text-center text-gray-900 sm:mt-0 sm:px-0 sm:text-6xl mb-10 md:px-0">From Click to Celebration</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8"> 
                 @foreach ($events as $event)
-                <div class="max-w-md bg-blue-400 border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <div class="max-w-md m-8 bg-blue-400 border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="{{ route('client.single', ['id' => $event->id]) }}">
                         <img class="rounded-t-lg" src="https://cdn.pixabay.com/photo/2015/01/16/15/00/concert-601537_1280.jpg" alt="" />
                     </a>
