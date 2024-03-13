@@ -86,7 +86,7 @@ class eventController extends Controller
 
     public function list(){
         $userId = Auth::id();
-        $events = Event::where('organizer_id', 2)->get();
+        $events = Event::where('organizer_id', $userId)->get();
         return view('organizer.list',  compact('events'));
 
     }
