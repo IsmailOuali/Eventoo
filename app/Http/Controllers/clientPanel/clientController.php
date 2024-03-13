@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\event;
 use App\Models\Category;
-use App\Models\reservation;
+use App\Models\Reservation;
+use App\Models\User;
 
 
 class clientController extends Controller
@@ -31,8 +32,9 @@ class clientController extends Controller
 
     public function single($id){
         $event = Event::find($id);
-
-        return view('client.single', ['event' => $event]);
+        $userId = auth()->id();
+        
+        return view('client.single', ['event' => $event, 'userId' => $userId]);
     }
 
     public function search(Request $request)
@@ -45,10 +47,7 @@ class clientController extends Controller
 
     public function createReservation(Request $request){
 
-        $eventId = $request->route('id');
-        $userId = auth()->id();
-        
-        return view('client.createReservation', ['eventId' => $eventId, 'userId' => $userId]);
+
     }
 
 
@@ -59,12 +58,23 @@ class clientController extends Controller
         'event_id' => 'required|numeric',
     ]);
 
+
     $newReservation = Reservation::create($data);
-    return redirect(route('client.home'));
-}
+    return redirect(route('client.ticket', ['id' => $newReservation->id]));
+    }
 
+    public function generateTicket($id) {
+        $reservation = Reservation::findOrFail($id);
 
-       
+        $event_id = $reservation->event_id;
+        $client_id = $reservation->client_id;
+        $event = Event::findOrFail($event_id);
+        $client = User::findOrFail($client_id);
+
+    
+        return view('client.ticket', compact('reservation', 'event', 'client'));
+    }
+
     
     
 }

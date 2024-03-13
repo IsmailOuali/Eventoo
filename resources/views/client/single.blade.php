@@ -71,12 +71,18 @@
                             <img class="w-full h-full object-cover" src="" alt="Event Image">
                         </div>
                         <!-- Add to Cart Button -->
-                        <div class="flex -mx-2 mb-4">
-                            <div class="w-1/2 px-2">
-                            <a href="{{ route('client.createReservation', ['id' => $event->id]) }}" class="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">Reserve a Seat</a>
+                        <form action="{{ route('client.storeReservation') }}" method="POST">
+                            @csrf
+                            @method('post')
+                            <div class="flex -mx-2 mb-4">
+                                <input type="text" hidden name="event_id" value="{{ $event->id }}">
+                                <input type="text" hidden name="client_id" value="{{ $userId}}">
+                                <div class="w-1/2 px-2">
+                                    <button type="submit" class="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">Reserve a Seat</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                     <div class="md:flex-1 px-4">
                         <!-- Event Title -->
                         <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">{{ $event->title }}</h2>

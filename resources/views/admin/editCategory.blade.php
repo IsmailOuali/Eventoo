@@ -16,10 +16,10 @@
     <script src="../assets/js/init-alpine.js"></script>
   </head>
   <body>
-    <div class="flex items-center justify-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900"> <!-- Adjusted to use justify-center -->
-      <div class="w-full max-w-4xl overflow-hidden bg-white rounded-lg shadow-xl dark:bg-gray-800" style="width: 75%;"> <!-- Adjusted width to take 75% of the parent -->
+    <div class="flex items-center justify-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">
+      <div class="w-full max-w-4xl overflow-hidden bg-white rounded-lg shadow-xl dark:bg-gray-800" style="width: 75%;"> 
         <div class="flex flex-col overflow-y-auto md:flex-col">
-          <div class="flex items-center justify-center p-6 sm:p-12"> <!-- Removed md:w-1/2 class -->
+          <div class="flex items-center justify-center p-6 sm:p-12"> 
             <div class="w-full md:w-full">
                 <h1 class="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200" > Update Category </h1>
                 <div class="text-gray-600 !important">
@@ -41,7 +41,7 @@
                       </div>
                       
                     </div>
-                    <div class="flex justify-between mt-6"> <!-- Adjusted to use justify-between -->
+                    <div class="flex justify-between mt-6"> 
                       <button type="submit" class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">Update Category</button>
                       <a href="{{ route('admin.categories') }}" class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">Go Back</a>
                     </div>
