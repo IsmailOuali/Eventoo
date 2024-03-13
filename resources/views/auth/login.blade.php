@@ -15,7 +15,11 @@
             <div class="text-center pb-6">
                 <h1 class="text-3xl">Login</h1>
             </div>
-
+                        @if (session('error'))
+            <div class="alert alert-danger">
+                    {{ session('error') }}
+            </div>
+            @endif
             <form method="POST" action="{{ route('login') }}" class="max-w-md mx-auto">
                 @csrf
 
