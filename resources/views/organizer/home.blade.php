@@ -26,6 +26,44 @@
     <script src=".././assets/js/charts-pie.js" defer></script>
   </head>
   <body>
+    <header class="relative z-50 w-full h-24 ">
+      <div
+          class="container bg-gray-200 flex items-center justify-center h-full max-w-6xl px-8 mx-auto sm:justify-between xl:px-0">
+
+          <a href="/" class="relative flex items-center inline-block h-5 h-full font-black leading-none">
+
+              <span class="ml-3 text-xl text-gray-800">Evento</span>
+          </a>
+
+          <nav id="nav"
+              class="absolute top-0 left-0 z-50 flex flex-col items-center justify-between hidden w-full h-64 pt-5 mt-24 text-sm text-gray-800 bg-white border-t border-gray-200 md:w-auto md:flex-row md:h-24 lg:text-base md:bg-transparent md:mt-0 md:border-none md:py-0 md:flex md:relative">
+              <a href="#" class="ml-0 mr-0 font-bold duration-100 md:ml-12 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Home</a>
+              <a href="#events"  class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Events</a>
+              <div class="flex flex-col block w-full font-medium border-t border-gray-200 md:hidden">
+                  <a href="#_" class="w-full py-2 font-bold text-center text-pink-500"></a>
+                  <a href="#_"class="relative inline-block w-full px-5 py-3 text-sm leading-none text-center text-white bg-indigo-700 fold-bold"></a>
+              </div>
+          </nav>
+
+          <div class="absolute left-0 flex-col items-center justify-center hidden w-full pb-8 mt-48 border-b border-gray-200 md:relative md:w-auto md:bg-transparent md:border-none md:mt-0 md:flex-row md:p-0 md:items-end md:flex md:justify-between">
+              <form method="POST" action="{{ route('logout') }}">
+                      @csrf
+                  
+                  <a href="{{  route('logout') }}" onclick="event.preventDefault();
+                                          this.closest('form').submit();" class="bg-transparent mr-8 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" >
+                      Log Out
+                  </a>
+              </form>                  
+          </div>
+
+          <div id="nav-mobile-btn"
+              class="absolute top-0 right-0 z-50 block w-6 mt-8 mr-10 cursor-pointer select-none md:hidden sm:mt-10">
+              <span class="block w-full h-1 mt-2 duration-200 transform bg-gray-800 rounded-full sm:mt-1"></span>
+              <span class="block w-full h-1 mt-1 duration-200 transform bg-gray-800 rounded-full"></span>
+          </div>
+
+      </div>
+  </header>
     <div class="flex h-screen bg-blue-200 dark:bg-gray-900" :class="{ 'overflow-hidden': isSideMenuOpen }">
       <div class="flex flex-col flex-1 w-full">
         <header class="z-10 py-4 bg-blue-200 shadow-md dark:bg-gray-800">
@@ -234,6 +272,7 @@
 
             <div class="relative mt-4 mb-4">
               <a href="{{ route('organizer.createEvent') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">Add Event</a>
+              <a href="{{ route('organizer.list') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">Events List</a>
             </div>
             <div class="mb-2 mt-2 text-gray-600 !important">
                 @if (session()->has('success'))

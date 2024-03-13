@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Event;
 use App\Models\Reservation;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -81,5 +82,12 @@ class eventController extends Controller
     public function destroy(Event $event){
         $event->delete();
         return redirect(route('organizer.home'))->with('success','Event Deleted Successfully');
+    }
+
+    public function list(){
+        $userId = Auth::id();
+        $events = Event::where('organizer_id', 2)->get();
+        return view('organizer.list',  compact('events'));
+
     }
 }

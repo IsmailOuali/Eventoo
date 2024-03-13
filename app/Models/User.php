@@ -38,4 +38,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public function event():HasMany
+    {
+        return $this->hasMany(event::class);
+    }
 }
